@@ -4,7 +4,7 @@ export default class Portfolio extends React.Component {
   render() {
     if (this.props.data) {
       var projects = this.props.data.projects.map((project) => {
-      var imageUrl = `public/images/portfolio/${project.image}`;
+      var imageUrl = `images/portfolio/${project.image}`;
 
         return (
           <div key={project.title} className="columns portfolio-item">
