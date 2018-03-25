@@ -1,0 +1,248 @@
+{
+  "main": {
+    "name":"Adevanir Vieira",
+    "occupation":"Software QA Analyst",
+    "description":"I guarantee the quality of all types of applications using automated, manual and performance tests, to name a few.",
+    "image":"profilepic.jpg",
+    "bio":"I am a highly motivated IT professional with 10 years of experience in software testing and quality assurance. I have worked on large scale projects for multinational companies such as Petrobras and Banco do Nordeste, and as an employee of a subsidiary of Brazil’s largest media company I guaranteed the quality of many web apps and websites. I have excellent troubleshooting skills, the ability to work as a team member and leader, and enjoy communicating with clients and coworkers.",
+    "email": "adevanir@gmail.com",
+    "phone": "+55 (62) 98506-6205",
+    "address":{
+      "street":"R. Dr. Artur Napoleão G. Silva, 347",
+      "neighborhood":"Setor Criméia Oeste",
+      "city":"Goiânia",
+      "state":"GO",
+      "country":"Brazil",
+      "zip": "74563-130"
+    },
+    "website": "http://www.techguywebsolutions.com",
+    "resumedownload":"https://docs.google.com/document/d/1JJ299-mLmbGQZens6ceitWzuv0E0Md8PO5QQr-yq5fM/edit?usp=sharing",
+    "social":[
+      {
+        "name":"facebook",
+        "url":"http://facebook.com",
+        "className":"fa fa-facebook"
+      },
+      {
+        "name":"twitter",
+        "url":"http://twitter.com",
+        "className":"fa fa-twitter"
+      },
+      {
+        "name":"google-plus",
+        "url":"http://googleplus.com",
+        "className":"fa fa-google-plus"
+      },
+      {
+        "name":"linkedin",
+        "url":"http://linkedin.com",
+        "className":"fa fa-linkedin"
+      },
+      {
+        "name":"instagram",
+        "url":"http://instagram.com",
+        "className":"fa fa-instagram"
+      },
+      {
+        "name":"github",
+        "url":"http://github.com",
+        "className":"fa fa-github"
+      },
+      {
+        "name":"skype",
+        "url":"http://skype.com",
+        "className":"fa fa-skype"
+      }
+    ]
+  },
+  "resume":{
+    "education":[
+      {
+        "school":"Pontifical Catholic University of Goiás",
+        "degree":"Computer Engineering",
+        "graduated":"April 2010",
+        "description":"Field: Software Quality Assurance. Credential/Diploma successfuly evaluated by WES-Canada - Ref#2578575/lcr"
+      }
+    ],
+    "works":[
+      {
+        "company":"Organização Jaime Câmara",
+        "title":"Software Quality Assurance Analyst",
+        "years":"March 2013 - July 2017",
+        "accomplishments":[
+          {
+            "description":"Tested an award (INMA 2015) winning mobile webapp: Expresso O Popular;"
+          },
+          {
+            "description":"Managed to guarantee the change of the company's main website; O Popular, to a more user-friendly approach; therefore, multiplying its number of page views by 6."
+          }
+        ],
+        "responsibilities":[
+          {
+            "description":"Develop, document and manage software testing plans;"
+          },
+          {
+            "description":"Execute, analyze and document the results of all test phases;"
+          },
+          {
+            "description":"Execute performance, regression, integration, functional and service tests;"
+          },
+          {
+            "description":"Automate functional tests;"
+          },
+          {
+            "description":"Develop test data;"
+          },
+          {
+            "description":"Work on an agile team using Scrum;"
+          },
+          {
+            "description":"TOOLS: JMeter, Selenium, SoapUI, Jira, SQL Server, Oracle, Polopoly, Microsoft Dynamics."
+          }
+        ]
+      },
+      {
+        "company":"Politec Global IT Service",
+        "title":"Software Quality Assurance Analyst",
+        "years":"December 2009 - June 2012",
+        "accomplishments":[
+          {
+            "description":"Managed a team of twelve software testers on a project with a duration of 18 months;"
+          },
+          {
+            "description":"Was an ISO 9001 auditor for 2 years."
+          }
+        ],
+        "responsibilities":[
+          {
+            "description":"Lead a team of 12 Software Testers;"
+          },
+          {
+            "description":"Document and managed software testing plans;"
+          },
+          {
+            "description":"Execute, analyze and document results of testing cycles;"
+          },
+          {
+            "description":"Develop test data and SQL scripts for data validation;"
+          },
+          {
+            "description":"Work on a standard team using Rational Unified Process (RUP);"
+          },
+          {
+            "description":"Tools: IBM Rational TestManager, Rational Manual Tester, SoapUI, TestLink, Mantis, Redmine, SQL Server, Eclipse."
+          }
+        ]
+      },
+      {
+        "company":"Pacto Software e Gestão",
+        "title":"Software Tester",
+        "years":"November 2006 - December 2009",
+        "accomplishments":[
+          {
+            "description":"Implanted the company’s software throughout the entire country (Brazil);"
+          },
+          {
+            "description":"Wrote the software quality assurance process used by the company;"
+          },
+          {
+            "description":"Decreased the monthly errors of the company's ERP by 86%."
+          }
+        ],
+        "responsibilities":[
+          {
+            "description":"Install software and hardware and configure operating system software in preparation for testing;"
+          },
+          {
+            "description":"Communicate with clients on the matters of software errors;"
+          },
+          {
+            "description":"Execute regression and functional tests;"
+          },
+          {
+            "description":"Hardware testing such as turnstiles, numeric keyboards and fingerprint recognition devices;"
+          },
+          {
+            "description":"Tools: Delphi, SQL Server, Firebird."
+          }
+        ]
+      }
+    ],
+    "skills":[
+      {
+        "name":"Test Automation: Selenium",
+        "level":"80%"
+      },
+      {
+        "name":"Performance Testing: JMeter",
+        "level":"70%"
+      },
+      {
+        "name":"SQL",
+        "level":"70%"
+      },
+      {
+        "name":"Manual Testing",
+        "level":"80%"
+      },
+      {
+        "name":"Ruby on Rails",
+        "level":"50%"
+      },
+      {
+        "name":"ReactJS",
+        "level":"50%"
+      },
+      {
+        "name":"Html",
+        "level":"50%"
+      },
+      {
+        "name":"CSS",
+        "level":"50%"
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"O Popular",
+        "description":"Dynamic news website geared to be fast, responsive and resilient. The ability to run on any device made it widely accepted by the target market.",
+        "image":"opopular.png",
+        "url":"https://www.opopular.com.br"
+      },
+      {
+        "title":"Classificados O Popular",
+        "description":"Responsive store where users can advertise Cars, Apartments, Job positions and others. The result is printed on the next day newspaper.",
+        "image":"classi.png",
+        "url":"https://classi.com.br"
+      },
+      {
+        "title":"O Popular Store",
+        "description":"Responsive store where users can buy subscriptions for daily newspapers.",
+        "image":"popstore.png",
+        "url":"https://popstore.opopular.com.br"
+      },
+      {
+        "title":"Ludovica",
+        "description":"Dynamic news website geared to be fast, responsive and resilient.",
+        "image":"ludovica.png",
+        "url":"https://ludovica.opopular.com.br"
+      },
+      {
+        "title":"Expresso O Popular",
+        "description":"Mobile webapp built to be fast. It won the INMA 2015 award promoted by the International News Media Association. (Runs only on mobile)",
+        "image":"expresso.png",
+        "url":"https://expresso.opopular.com.br"
+      }
+    ]
+  },
+  "testimonials":{
+    "testimonials":[
+      {
+        "text":"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.",
+        "user":"Steve Jobs"
+      }
+    ]
+  }
+}
