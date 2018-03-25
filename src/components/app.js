@@ -20,6 +20,7 @@ export default class App extends Component {
   
   getResumeData() {
     console.log(process.env.NODE_ENV);
+    
     var jsonUrl = 'https://test-adevas.c9users.io/resumeData.json';
     
     if (process.env.NODE_ENV === 'production') {
