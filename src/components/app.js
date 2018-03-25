@@ -20,15 +20,16 @@ export default class App extends Component {
   
   getResumeData() {
     console.log(process.env.NODE_ENV);
+    console.log(process.env.REACT_APP_JSONURL);
     
-    var jsonUrl = 'https://test-adevas.c9users.io/resumeData.json';
+    // var jsonUrl = 'https://test-adevas.c9users.io/resumeData.json';
     
-    if (process.env.NODE_ENV === 'production') {
-      jsonUrl = 'https://aqueous-coast-82869.herokuapp.com/resumeData.json';
-    }
+    // if (process.env.NODE_ENV === 'production') {
+    //   jsonUrl = 'https://aqueous-coast-82869.herokuapp.com/resumeData.json';
+    // }
     
     $.ajax({
-      url: jsonUrl,
+      url: process.env.REACT_APP_JSONURL,
       dataType: 'json',
       cache: false,
       success: function(data){
