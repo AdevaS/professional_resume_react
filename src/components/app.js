@@ -7,7 +7,7 @@ import Footer from './footer';
 import Header from './header';
 import Portfolio from './portfolio';
 import Resume from './resume';
-import Testimonials from './testimonials';
+//import Testimonials from './testimonials';
 
 export default class App extends Component {
   constructor(props) {
@@ -19,7 +19,6 @@ export default class App extends Component {
   }
   
   getResumeData() {
-    console.log(process.env.NODE_ENV);
 
     $.ajax({
       url: process.env.REACT_APP_JSONURL,
@@ -46,7 +45,7 @@ export default class App extends Component {
         <About data={this.state.resumeData.main} />
         <Resume data={this.state.resumeData.resume} />
         <Portfolio data={this.state.resumeData.portfolio} />
-        <Testimonials data={this.state.resumeData.testimonials} />
+        {/*<Testimonials data={this.state.resumeData.testimonials} />*/}
         <Contact data={this.state.resumeData.main} />
         <Footer />
       </div>

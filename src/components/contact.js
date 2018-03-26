@@ -1,6 +1,46 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Contact extends Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      contactName: "",
+      contactEmail: "",
+      contactSubject: "",
+      contactMessage: ""
+    };
+    
+    this.handleChanges = this.handleChanges.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+  handleChanges(event) {
+    this.setState(
+      {
+        [event.target.name]: event.target.value
+      }
+    );
+  } 
+  
+  handleSubmit(event) {
+    event.preventDefault();
+    
+    axios.post('/formdata', {
+      contactName: this.state.contactName,
+      contactEmail: this.state.contactEmail,
+      contactSubject: this.state.contactSubject,
+      contactMessage: this.state.contactMessage
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+  
   render() {
     if (this.props.data) {
       var { name, email, phone } = this.props.data;
@@ -21,23 +61,23 @@ export default class Contact extends Component {
         </div>
         <div className="row">
           <div className="eight columns">
-            <form action="" method="post" id="contactForm" name="contactForm">
+            <form onSubmit={this.handleSubmit} action="" method="post" id="contactForm" name="contactForm">
               <fieldset>
                 <div>
                   <label htmlFor="contactName">Name <span className="required">*</span></label>
-                  <input type="text" size="35" id="contactName" name="contactName" />
+                  <input onChange={this.handleChanges} type="text" size="35" id="contactName" name="contactName" />
                 </div>
                 <div>
                   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-                  <input type="text" size="35" id="contactEmail" name="contactEmail" />
+                  <input onChange={this.handleChanges} type="text" size="35" id="contactEmail" name="contactEmail" />
                 </div>
                 <div>
                   <label htmlFor="contactSubject">Subject</label>
-                  <input type="text" size="35" id="contactSubject" name="contactSubject" />
+                  <input onChange={this.handleChanges} type="text" size="35" id="contactSubject" name="contactSubject" />
                 </div>
                 <div>
                   <label htmlFor="contactMessage">Message <span className="required">*</span></label>
-                  <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                  <textarea onChange={this.handleChanges} cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
                 </div>
                 <div>
                   <button className="submit">Submit</button>
