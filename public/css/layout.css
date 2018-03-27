@@ -887,6 +887,15 @@ call-to-action .button {
 #message-success i {
    margin-right: 10px;
 }
+#message-error-contactName, 
+#message-error-contactEmail, 
+#message-error-contactMessage {
+   display: none;
+   margin: -42px 0 24px 0;
+   width: 65%;
+   margin-left: 26%;
+   color: #D72828;
+}
 #image-loader {
    display: none;
    position: relative;

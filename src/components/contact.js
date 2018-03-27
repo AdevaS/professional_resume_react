@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import $ from 'jquery';
 
 export default class Contact extends Component {
   constructor() {
@@ -14,6 +15,7 @@ export default class Contact extends Component {
     
     this.handleChanges = this.handleChanges.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
   
   handleChanges(event) {
@@ -24,33 +26,46 @@ export default class Contact extends Component {
     );
   } 
   
+  handleBlur(event) {
+    if (!event.target.value) {
+      $('#message-error-'+ event.target.name).show();  
+    }
+    else {
+      $('#message-error-'+ event.target.name).hide();
+    }
+  }
+  
   handleSubmit(event) {
     event.preventDefault();
     
-    const successMsg = "Thank you for your contact. I will get in touch soon!";
-    
-    this.setState({ 
-      contactName: '',
-      contactEmail: '',
-      contactSubject: '',
-      contactMessage: ''
-    });
-    
-    axios.post('/formdata', {
-      contactName: this.state.contactName,
-      contactEmail: this.state.contactEmail,
-      contactSubject: this.state.contactSubject,
-      contactMessage: this.state.contactMessage
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-    
-
-    alert(successMsg);
+    if (!this.state.contactName || !this.state.contactEmail || !this.state.contactMessage) {
+      $('#message-success').hide();
+      $('#message-warning').show();
+    }
+    else {
+      this.setState({ 
+        contactName: '',
+        contactEmail: '',
+        contactSubject: '',
+        contactMessage: ''
+      });
+      
+      axios.post('/formdata', {
+        contactName: this.state.contactName,
+        contactEmail: this.state.contactEmail,
+        contactSubject: this.state.contactSubject,
+        contactMessage: this.state.contactMessage
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      
+      $('#message-success').show();
+      $('#message-warning').hide();
+    }
   }
   
   render() {
@@ -77,19 +92,45 @@ export default class Contact extends Component {
               <fieldset>
                 <div>
                   <label htmlFor="contactName">Name <span className="required">*</span></label>
-                  <input onChange={this.handleChanges} value={this.state.contactName} type="text" size="35" id="contactName" name="contactName" />
+                  <input 
+                    onBlur={this.handleBlur}
+                    onChange={this.handleChanges} 
+                    value={this.state.contactName} 
+                    type="text" size="35" 
+                    id="contactName" 
+                    name="contactName" />
+                  <div id="message-error-contactName"> A name must be informed.</div>
                 </div>
                 <div>
                   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-                  <input onChange={this.handleChanges} value={this.state.contactEmail} type="text" size="35" id="contactEmail" name="contactEmail" />
+                  <input 
+                    onBlur={this.handleBlur}
+                    onChange={this.handleChanges} 
+                    value={this.state.contactEmail} 
+                    type="text" size="35" 
+                    id="contactEmail" 
+                    name="contactEmail" />
+                  <div id="message-error-contactEmail"> An e-mail must be informed.</div>
                 </div>
                 <div>
                   <label htmlFor="contactSubject">Subject</label>
-                  <input onChange={this.handleChanges} value={this.state.contactSubject} type="text" size="35" id="contactSubject" name="contactSubject" />
+                  <input 
+                    onChange={this.handleChanges} 
+                    value={this.state.contactSubject} 
+                    type="text" size="35" 
+                    id="contactSubject" 
+                    name="contactSubject" />
                 </div>
                 <div>
                   <label htmlFor="contactMessage">Message <span className="required">*</span></label>
-                  <textarea onChange={this.handleChanges} value={this.state.contactMessage} cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                  <textarea 
+                    onBlur={this.handleBlur}
+                    onChange={this.handleChanges} 
+                    value={this.state.contactMessage} 
+                    cols="50" rows="15" 
+                    id="contactMessage" 
+                    name="contactMessage"></textarea>
+                  <div id="message-error-contactMessage"> A message must be informed.</div>
                 </div>
                 <div>
                   <button className="submit">Submit</button>
@@ -99,7 +140,7 @@ export default class Contact extends Component {
                 </div>
               </fieldset>
             </form>
-            <div id="message-warning"> Error boy</div>
+            <div id="message-warning">Fill the empty fields above.</div>
             <div id="message-success">
               <i className="fa fa-check"></i>Your message was sent, thank you!<br />
             </div>
