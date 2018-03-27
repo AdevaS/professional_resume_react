@@ -24,7 +24,7 @@ app.post('/formdata', (req, res) => {
     text: req.body.contactMessage
   };
    
-  mailgun.messages().send(data, function (error, body) {
+  mailgun.messages().send(data, (error, body) => {
     console.log(body);
   });
 });

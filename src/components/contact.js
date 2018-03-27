@@ -27,6 +27,15 @@ export default class Contact extends Component {
   handleSubmit(event) {
     event.preventDefault();
     
+    const successMsg = "Thank you for your contact. I will get in touch soon!";
+    
+    this.setState({ 
+      contactName: '',
+      contactEmail: '',
+      contactSubject: '',
+      contactMessage: ''
+    });
+    
     axios.post('/formdata', {
       contactName: this.state.contactName,
       contactEmail: this.state.contactEmail,
@@ -39,6 +48,9 @@ export default class Contact extends Component {
     .catch(function (error) {
       console.log(error);
     });
+    
+
+    alert(successMsg);
   }
   
   render() {
@@ -65,19 +77,19 @@ export default class Contact extends Component {
               <fieldset>
                 <div>
                   <label htmlFor="contactName">Name <span className="required">*</span></label>
-                  <input onChange={this.handleChanges} type="text" size="35" id="contactName" name="contactName" />
+                  <input onChange={this.handleChanges} value={this.state.contactName} type="text" size="35" id="contactName" name="contactName" />
                 </div>
                 <div>
                   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-                  <input onChange={this.handleChanges} type="text" size="35" id="contactEmail" name="contactEmail" />
+                  <input onChange={this.handleChanges} value={this.state.contactEmail} type="text" size="35" id="contactEmail" name="contactEmail" />
                 </div>
                 <div>
                   <label htmlFor="contactSubject">Subject</label>
-                  <input onChange={this.handleChanges} type="text" size="35" id="contactSubject" name="contactSubject" />
+                  <input onChange={this.handleChanges} value={this.state.contactSubject} type="text" size="35" id="contactSubject" name="contactSubject" />
                 </div>
                 <div>
                   <label htmlFor="contactMessage">Message <span className="required">*</span></label>
-                  <textarea onChange={this.handleChanges} cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                  <textarea onChange={this.handleChanges} value={this.state.contactMessage} cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
                 </div>
                 <div>
                   <button className="submit">Submit</button>
