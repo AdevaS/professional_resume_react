@@ -11,15 +11,15 @@ export default class About extends Component {
       <section id="about">
         <div className="row">
           <div className="three columns">
-            <img className="profile-pic"  src="images/profilepic.jpg" alt="" />
+            <img id="profilePic" className="profile-pic"  src="images/profilepic.jpg" alt="" />
           </div>
           <div className="nine columns main-col">
             <h2>About Me</h2>
-            <p>{bio}</p>
+            <p id="biography">{bio}</p>
             <div className="row">
               <div className="columns contact-details">
                 <h2>Contact Details</h2>
-                <p className="address">
+                <p id="address" className="address">
                   <span>{name}</span><br/>
                   <span>{street}<br/>
                   {neighborhood}<br/>

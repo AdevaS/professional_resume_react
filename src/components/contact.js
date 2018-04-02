@@ -133,7 +133,7 @@ export default class Contact extends Component {
                   <div id="message-error-contactMessage"> A message must be informed.</div>
                 </div>
                 <div>
-                  <button className="submit">Submit</button>
+                  <button id="submit-button" className="submit">Submit</button>
                   <span id="image-loader">
                   <img alt="" src="images/loader.gif" />
                   </span>

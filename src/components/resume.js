@@ -7,9 +7,9 @@ export default class Resume extends Component {
         return (
           <div key={educationData.school} className="row item">
             <div className="twelve columns">
-              <h3>{educationData.school}</h3>
-              <p className="info">{educationData.degree} <span>&bull;</span> <em className="date">{educationData.graduated}</em></p>
-              <p>{educationData.description}</p>
+              <h3 id="school">{educationData.school}</h3>
+              <p id="degree" className="info">{educationData.degree} <span>&bull;</span> <em id="grad-year" className="date">{educationData.graduated}</em></p>
+              <p id="degree-description">{educationData.description}</p>
             </div>
           </div>
         ); 
@@ -24,16 +24,16 @@ export default class Resume extends Component {
         });
           
         return (
-          <div key={work.company} className="row item">
+          <div id="works" key={work.company} className="row item">
             <div className="twelve columns">
               <h3>{work.company}</h3>
               <p className="info">{work.title} <span>&bull;</span> <em className="date">{work.years}</em></p>
               <dt className="subtitle"><b>Accomplishments:</b></dt>
-              <ul className="disc">
+              <ul id="accomplishments" className="disc">
                 {accomplishments}
               </ul>
               <dt className="subtitle"><b>Responsibilities:</b></dt>
-              <ul className="disc">
+              <ul id="responsibilities" className="disc">
                 {responsibilities}
               </ul>
             </div>
@@ -82,7 +82,7 @@ export default class Resume extends Component {
               voluptatem sequi nesciunt.
             </p>*/}
             <div className="bars">
-              <ul className="skills">
+              <ul id="skills" className="skills">
                 {skills}
               </ul>
             </div>
